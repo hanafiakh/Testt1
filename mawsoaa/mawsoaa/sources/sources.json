@@ -1,0 +1,53 @@
+{
+  "repos": [
+    {"id": "voidwave_quran", "url": "https://github.com/voidwave/Quran", "inspected_in_session": true,
+     "role": "Quran web app. Documents its data chain: text/tafsir from Tanzil.net, per-ayah audio (SSSAAA.mp3) from VerseByVerseQuran.com.",
+     "license_note": "No license file seen. README says free to use but text/audio remain under Tanzil / VerseByVerse terms. Used as REFERENCE only, nothing copied."},
+    {"id": "rn0x_adhkar", "url": "https://github.com/rn0x/Adhkar-json", "inspected_in_session": true,
+     "role": "Hisn al-Muslim JSON (text + count + audio paths). 6 commits, archived 2023-07-10.",
+     "license_note": "No license file; README states free use without legal liability. Fields NOT present: source, takhrij, grade."},
+    {"id": "ahmedbaset_hadith", "url": "https://github.com/AhmedBaset/hadith-json", "inspected_in_session": true,
+     "role": "50,884 hadiths, 17 books (Arabic+English), scraped from Sunnah.com. Pin tag v1.2.0.",
+     "license_note": "No license shown on the repo page; content scraped from sunnah.com -> REVIEW rights before redistribution. README: Musnad Ahmad chapters 8-30 are missing."},
+    {"id": "abdalmoniem_alquran", "url": "https://github.com/abdalmoniem/AlQuran", "inspected_in_session": false},
+    {"id": "d0tahmed_quran2u", "url": "https://github.com/d0tahmed/Quran2U", "inspected_in_session": false},
+    {"id": "sehalhussain_hadith_dua", "url": "https://github.com/sehalhussain/Hadith-Dua-assets", "inspected_in_session": false},
+    {"id": "itsyaasir_hisn", "url": "https://github.com/itsyaasir/hisn-al-muslim", "inspected_in_session": false},
+    {"id": "hapibi_hadith", "url": "https://github.com/hapibi/hadith-json", "inspected_in_session": false}
+  ],
+  "search_terms": [
+    "Quran JSON Uthmani", "Quran Arabic offline database", "Quran recitations MP3", "EveryAyah audio",
+    "Warsh Quran data", "Hisnul Muslim JSON Arabic", "Arabic Hadith JSON database", "Kutub al Sittah JSON",
+    "Sunnah books offline database", "Islamic books open source", "Tafsir Arabic JSON", "Islamic dua offline database"
+  ],
+  "downloads": [
+    {"id": "tanzil_quran_uthmani", "kind": "file", "required": true, "url_verified": false,
+     "url": "https://tanzil.net/pub/download/index.php?quranType=uthmani&marks=true&sajdah=true&rub=true&alef=true&hamza=true&outType=txt-2&agree=true",
+     "dest": "raw/tanzil/quran-uthmani.txt",
+     "license": "Tanzil terms: verbatim copy only, no modification, attribution required. Read terms at https://tanzil.net before redistributing.",
+     "notes": "Tanzil serves this through a form; if the direct URL fails, download manually from https://tanzil.net/download and place the file at data/raw/tanzil/quran-uthmani.txt (Uthmani, text format 'sura|aya|text')."},
+    {"id": "tanzil_metadata", "kind": "file", "required": false, "url_verified": false,
+     "url": "https://tanzil.net/res/text/metadata/quran-data.xml", "dest": "raw/tanzil/quran-data.xml",
+     "license": "Tanzil terms (see above)", "notes": "Surah names, juz, hizb-quarter, page boundaries. Optional but needed for juz/hizb/page navigation."},
+    {"id": "adhkar_json", "kind": "file", "required": true, "url_verified": true,
+     "url": "https://raw.githubusercontent.com/rn0x/Adhkar-json/main/adhkar.json", "dest": "raw/adhkar/adhkar.json",
+     "license": "No license file; author states free use. Audio (reciter Hamad Al-Dorayhem) is NOT downloaded by default."},
+    {"id": "hadith_json_v1_2_0", "kind": "github_tree", "required": true, "repo": "AhmedBaset/hadith-json", "ref": "v1.2.0",
+     "prefix": "db/by_book/", "ext": ".json", "dest": "raw/hadith",
+     "license": "UNSPECIFIED; scraped from sunnah.com. Review before shipping publicly."},
+    {"id": "mp3quran_reciters", "kind": "file", "required": false, "url_verified": false,
+     "url": "https://www.mp3quran.net/api/v3/reciters?language=ar", "dest": "raw/mp3quran/reciters_ar.json",
+     "license": "Review mp3quran.net terms of use before shipping a catalog derived from it.",
+     "notes": "Whole-surah MP3 servers per reciter/riwaya, with the exact list of surahs available (surah_list)."},
+    {"id": "amiri_regular", "kind": "file", "required": false, "url_verified": false,
+     "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/amiri/Amiri-Regular.ttf", "dest": "@assets/fonts/Amiri-Regular.ttf",
+     "license": "SIL OFL 1.1"},
+    {"id": "amiri_bold", "kind": "file", "required": false, "url_verified": false,
+     "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/amiri/Amiri-Bold.ttf", "dest": "@assets/fonts/Amiri-Bold.ttf",
+     "license": "SIL OFL 1.1"}
+  ],
+  "hadith_known_partial": [
+    {"match": ["ahmad", "ahmed", "musnad", "مسند"], "note": "Source README: Musnad Ahmad chapters 8-30 missing from Sunnah.com source data."}
+  ],
+  "hadith_expected_counts": {}
+}

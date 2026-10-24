@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ar" dir="rtl" class="reader">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b6b4f">
+<title>المصحف</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="stylesheet" href="mushaf.css">
+</head>
+<body>
+<nav id="tabs"><a class="on" href="index.html">المصحف</a><a href="tafsir.html">تفسير</a><a href="memorize.html">تسميع</a></nav>
+<main id="pages"></main>
+
+<div id="player" hidden>
+  <input id="pSeek" type="range" min="0" max="1000" value="0" aria-label="التقدم">
+  <div class="prow"><button id="pPrev" aria-label="السورة السابقة">⏮</button><button id="pPlay" aria-label="تشغيل/إيقاف">⏸</button><button id="pNext" aria-label="السورة التالية">⏭</button>
+  <span id="pTitle"></span><button id="pStop" aria-label="إغلاق">✕</button></div>
+</div>
+
+<footer id="nav">
+  <button id="btnSurahs">📖 السور</button>
+  <span id="cur">ص ١</span>
+  <button id="kebab" aria-label="المزيد">⋮</button>
+</footer>
+
+<div id="menu" hidden>
+  <button id="mRandom">🔀 سورة عشوائية</button>
+  <button id="mTheme">🌙 الوضع</button>
+  <button id="mOffline">⬇ تنزيل للعمل دون إنترنت <small id="mProg"></small></button>
+  <button id="mInstall" hidden>⬇ تثبيت التطبيق</button>
+  <label class="mgo">قارئ الآية <select id="ayahReciter"></select></label>
+  <div class="hint">اضغط على أي آية لتسمعها وتتلوّن بالأحمر</div>
+  <label class="mgo" id="recWrap" hidden>قارئ السورة كاملة <select id="reciter"></select></label>
+  <label class="mgo">انتقال إلى صفحة <input id="goto" type="number" min="1" max="604" inputmode="numeric"></label>
+</div>
+
+<dialog id="surahDlg"><header><b>السور</b><button id="dlgClose">✕</button></header><ul id="sl"></ul></dialog>
+
+<script src="config.js"></script>
+<script src="player-core.js"></script>
+<script src="ayah-core.js"></script>
+<script src="mushaf.js"></script>
+</body>
+</html>

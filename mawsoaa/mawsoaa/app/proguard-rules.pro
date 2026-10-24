@@ -1,0 +1,3 @@
+-keep class androidx.media3.** { *; }
+-dontwarn org.checkerframework.**
+-dontwarn javax.annotation.**

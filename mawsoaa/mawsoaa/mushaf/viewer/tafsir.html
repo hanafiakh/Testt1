@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>التفسير</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="mushaf.css">
+<style>
+  #setup { display:flex; gap:8px; flex-wrap:wrap; align-items:center; padding:10px 12px; background:var(--bar); color:var(--barink); }
+  #setup select, #setup input, #setup button { padding:5px 8px; border-radius:6px; border:0; font:inherit; }
+  #ayah { max-width:680px; margin:14px auto 0; padding:12px 16px; font-size:26px; line-height:2.1; text-align:justify; border-bottom:1px solid var(--gold); }
+  #body { max-width:680px; margin:0 auto; padding:12px 16px 90px; font-size:19px; line-height:2; text-align:justify; }
+  #body h1,#body h2,#body h3,#body h4 { color:var(--emerald); font-size:1.05em; margin:.8em 0 .2em; }
+  #src { max-width:680px; margin:0 auto; padding:0 16px; font-size:12px; color:var(--mute); }
+  #pager { position:fixed; bottom:0; left:0; right:0; display:flex; gap:10px; padding:10px 14px; padding-bottom:max(10px, env(safe-area-inset-bottom)); background:var(--bar); }
+  #pager button { flex:1; padding:12px; border:1px solid var(--gold); background:none; color:var(--barink); border-radius:12px; font:inherit; }
+</style>
+</head>
+<body>
+<nav id="tabs"><a href="index.html">المصحف</a><a class="on" href="tafsir.html">تفسير</a><a href="memorize.html">تسميع</a></nav>
+<div id="setup">
+  <select id="book"></select><select id="surah"></select>
+  آية <input id="aya" type="number" min="1" value="1" style="width:4.5em">
+  <button id="go">اعرض</button>
+</div>
+<div id="ayah"></div>
+<div id="src"></div>
+<main id="body">اختر الكتاب والسورة والآية ثم «اعرض».</main>
+<div id="pager"><button id="prev">الآية السابقة</button><button id="next">الآية التالية</button></div>
+<script src="config.js"></script>
+<script src="tafsir.js"></script>
+</body>
+</html>
